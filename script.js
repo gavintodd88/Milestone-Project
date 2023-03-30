@@ -1,12 +1,33 @@
-git const character = document.getElementById("character");
-const block = document.getElementById("block");
+const character = document.getElementById("character");
 
 function jump() {
-  if (dino.classList != "jump") {
-    dino.classList.add("jump");
-
-    setTimeout(function () {
-      dino.classList.remove("jump");
-    }, 300);
+    if (character.classList != "jump") {
+      character.classList.add("jump");
+  
+      setTimeout(function () {
+        character.classList.remove("jump");
+      }, 300);
+    }
   }
-}
+
+  alert("Game Start!");
+
+  let isAlive = setInterval(function () {
+    // get current dino Y position
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+  
+    // get current cactus X position
+    let fireLeft = parseInt(
+      window.getComputedStyle(fire).getPropertyValue("left")
+    );
+  
+    // detect collision
+    if (fireLeft < 10 && fireLeft > 0 && characterTop >= 350) {
+      // collision
+      alert("Game Over!");
+    }
+  }, 10);
+  
+  document.addEventListener("click", function (event) {
+    jump();
+  });
