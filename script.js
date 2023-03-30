@@ -1,10 +1,12 @@
-let character = document.getElementById("character");
+git const character = document.getElementById("character");
+const block = document.getElementById("block");
 
-let block = document.getElementById("block");
+function jump() {
+  if (dino.classList != "jump") {
+    dino.classList.add("jump");
 
-function jump(){
-    character.classList.add("animate");
-    setTimeout(function(){
-        character.classList.remove("animate")
-    },500);
-}   
+    setTimeout(function () {
+      dino.classList.remove("jump");
+    }, 300);
+  }
+}
