@@ -13,10 +13,10 @@ function jump() {
   alert("Game Start!");
 
   let isAlive = setInterval(function () {
-    // get current dino Y position
+    // get current character Y position
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
   
-    // get current cactus X position
+    // get current fireball X position
     let fireLeft = parseInt(
       window.getComputedStyle(fire).getPropertyValue("left")
     );
